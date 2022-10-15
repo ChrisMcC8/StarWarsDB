@@ -4,12 +4,12 @@ one:
   name: MyString
   mass: MyString
   birth_year: MyString
-  homeworld: one
+  planet: MyString
   species: MyString
 
 two:
   name: MyString
   mass: MyString
   birth_year: MyString
-  homeworld: two
+  planet: MyString
   species: MyString

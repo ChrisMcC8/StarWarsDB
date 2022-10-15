@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_15_194421) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_205353) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "mass"
     t.string "birth_year"
-    t.integer "homeworld_id", null: false
+    t.string "planet"
     t.string "species"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["homeworld_id"], name: "index_characters_on_homeworld_id"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -33,5 +32,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_194421) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "characters", "homeworlds"
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
