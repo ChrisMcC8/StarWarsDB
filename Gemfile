@@ -52,6 +52,8 @@ gem 'kaminari'
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.2'
 
+gem "bulma-rails", "~> 0.8.0"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

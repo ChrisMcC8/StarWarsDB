@@ -14,10 +14,14 @@
 
 <h1>Starships</h1>
 
+<div class="container col-4">
 <div id="starships">
   <% @starships.each do |starship| %>
+    <div class="row">
     <ul>
       <li><%= link_to starship.name, starship%></li>
     </ul>
+    </div>
   <% end %>
+</div>
 </div>
