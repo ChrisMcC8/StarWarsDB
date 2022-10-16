@@ -3,7 +3,14 @@ class StarshipsController < ApplicationController
 
   # GET /starships or /starships.json
   def index
-    @starships = Starship.all
+    if params[:search]
+      search_term = params[:search].downcase.gsub(/\s+/, "")
+      @starships = Starship.all.select{ |starship|
+        starship.name.downcase.include?(search_term)
+      }
+    else  
+      @starships = Starship.all
+    end
   end
 
   # GET /starships/1 or /starships/1.json
@@ -17,6 +24,10 @@ class StarshipsController < ApplicationController
 
   # GET /starships/1/edit
   def edit
+  end
+
+  def starship_params
+    params.require(:starship).permit(:name, :starship_id, :search)
   end
 
   # POST /starships or /starships.json
