@@ -1,27 +1,68 @@
 <%= stylesheet_link_tag "application.css" %>
 
-<ul class="nav-bar">
-  <li class="menu"><a href="home">Home</a></li>
-  <li class="menu"><a href="characters">Characters</a></li>
-  <li class="menu"><a href="planets">Planets</a></li>
-  <li class="menu"><a href="species">Species</a></li>
-  <li class="menu"><a href="starships">Starships</a></li>
-  <li class="menu"><a href="contact">Contact</a></li>
-  <li class="menu"><a href="../pages/about">About</a></li>
-</ul>
+<nav class="navbar is-dark"  aria-label="main navigation">
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="characters">
+        Characters
+      </a>
+
+      <a class="navbar-item" href="planets">
+        Planets
+      </a>
+
+      <a class="navbar-item" href="species">
+        Species
+      </a>
+
+      <a class="navbar-item" href="starships">
+        Starships
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../pages/about">
+            About
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <p style="color: green"><%= notice %></p>
 
-<h1>Starships</h1>
+<br>
 
-<div class="container col-4">
-<div id="starships">
-  <% @starships.each do |starship| %>
-    <div class="row">
-    <ul>
-      <li><%= link_to starship.name, starship%></li>
-    </ul>
-    </div>
+<p class="title is-1 is-spaced">Starships</p>
+
+<h3>Search for Starship: </h3>
+  <%= form_tag(starships_path, method: :get) do %>
+    <%= text_field_tag( :search, params[:search]) %>
+    <%= submit_tag("Search") %>
   <% end %>
-</div>
-</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name:</th>
+      <th>Model:</th>
+      <th>Length:</th>
+    </tr>
+  </thead>
+  <tbody>
+  <div id="starships">
+    <% @starships.each do |starship| %>
+    <tr>
+      <th><%= link_to starship.name, starship%></th>
+      <th><%=  starship.model %></th>
+      <th><%=  starship.length %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
