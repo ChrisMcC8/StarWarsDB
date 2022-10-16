@@ -3,7 +3,14 @@ class CharactersController < ApplicationController
 
   # GET /characters or /characters.json
   def index
-    @characters = Character.all
+    if params[:search]
+      search_term = params[:search].downcase.gsub(/\s+/, "")
+      @characters = Character.all.select{ |character|
+        character.name.downcase.include?(search_term)
+      }
+    else  
+      @characters = Character.all
+    end
   end
 
   # GET /characters/1 or /characters/1.json
