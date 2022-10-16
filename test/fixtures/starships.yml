@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  model: MyString
+  manufacturer: MyString
+  length: MyString
+  crew: MyString
+  passengers: MyString
+  starship_class: MyString
+
+two:
+  name: MyString
+  model: MyString
+  manufacturer: MyString
+  length: MyString
+  crew: MyString
+  passengers: MyString
+  starship_class: MyString

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :starships
   resources :planets
   resources :characters do
     get '/characters/:character', action: :index, on: :collection

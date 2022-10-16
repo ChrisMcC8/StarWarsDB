@@ -1,0 +1,52 @@
+<%= form_with(model: starship) do |form| %>
+  <% if starship.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(starship.errors.count, "error") %> prohibited this starship from being saved:</h2>
+
+      <ul>
+        <% starship.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :manufacturer, style: "display: block" %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div>
+    <%= form.label :length, style: "display: block" %>
+    <%= form.text_field :length %>
+  </div>
+
+  <div>
+    <%= form.label :crew, style: "display: block" %>
+    <%= form.text_field :crew %>
+  </div>
+
+  <div>
+    <%= form.label :passengers, style: "display: block" %>
+    <%= form.text_field :passengers %>
+  </div>
+
+  <div>
+    <%= form.label :starship_class, style: "display: block" %>
+    <%= form.text_field :starship_class %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
