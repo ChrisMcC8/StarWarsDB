@@ -50,9 +50,7 @@ gem "bootsnap", require: false
 
 gem 'kaminari'
 
-gem 'rails-bootstrap-grid', '0.1.1'
-
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap', '~> 5.2', '>= 5.2.2'
 
 
 group :development, :test do
