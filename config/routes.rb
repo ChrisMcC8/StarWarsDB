@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/show'
   resources :starships
   resources :planets
+  resources :species
   resources :characters do
     get '/characters/:character', action: :index, on: :collection
   end
@@ -8,6 +10,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  root to: "home#index"
+
+  Rails.application.routes.draw do
+    get "/pages/:page" => "pages#show"
+  end
 
 
 end

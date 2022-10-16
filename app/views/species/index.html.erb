@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "application.css" %>
 
+
 <ul class="nav-bar">
   <li class="menu"><a href="home">Home</a></li>
   <li class="menu"><a href="characters">Characters</a></li>
@@ -12,12 +13,15 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1>Starships</h1>
+<h1>Species</h1>
 
-<div id="starships">
-  <% @starships.each do |starship| %>
-    <ul>
-      <li><%= link_to starship.name, starship%></li>
-    </ul>
+<div id="species">
+  <% @species.each do |species| %>
+    <%= render species %>
+    <p>
+      <%= link_to "Show this species", species %>
+    </p>
   <% end %>
 </div>
+
+<%= link_to "New species", new_species_path %>

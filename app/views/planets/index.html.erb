@@ -1,37 +1,11 @@
-<head>
-<style>
-    body{
-      font-family:'copperplate';
-    }
-    .nav-bar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-    }
+<%= stylesheet_link_tag "application.css" %>
 
-    .menu {
-        float: left;
-    }
-
-    .menu a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    .menu a:hover {
-        background-color: #111;
-    }
-
-</style>
-</head>
-<body>
 <ul class="nav-bar">
-  <li class="menu"><a href="tv_show">Home</a></li>
+  <li class="menu"><a href="home">Home</a></li>
+  <li class="menu"><a href="characters">Characters</a></li>
+  <li class="menu"><a href="planets">Planets</a></li>
+  <li class="menu"><a href="species">Species</a></li>
+  <li class="menu"><a href="starships">Starships</a></li>
   <li class="menu"><a href="contact">Contact</a></li>
   <li class="menu"><a href="../pages/about">About</a></li>
 </ul>
@@ -47,4 +21,3 @@
     </ul>
   <% end %>
 </div>
-</body>
