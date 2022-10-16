@@ -3,7 +3,14 @@ class PlanetsController < ApplicationController
 
   # GET /planets or /planets.json
   def index
-    @planets = Planet.all
+    if params[:search]
+      search_term = params[:search].downcase.gsub(/\s+/, "")
+      @planets = Planet.all.select{ |planet|
+        planet.name.downcase.include?(search_term)
+      }
+    else  
+      @planets = Planet.all
+    end
   end
 
   # GET /planets/1 or /planets/1.json
@@ -18,6 +25,8 @@ class PlanetsController < ApplicationController
   # GET /planets/1/edit
   def edit
   end
+
+
 
   # POST /planets or /planets.json
   def create
