@@ -12,10 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require_main
  */
+ @import "bulma";
 
 
- body{
+ /* body{
     font-family:'copperplate';
   }
   .nav-bar {
@@ -40,4 +42,4 @@
 
   .menu  a:hover {
       background-color: #111;
-  }
+  } */
