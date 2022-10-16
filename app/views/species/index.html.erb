@@ -1,27 +1,59 @@
 <%= stylesheet_link_tag "application.css" %>
 
 
-<ul class="nav-bar">
-  <li class="menu"><a href="home">Home</a></li>
-  <li class="menu"><a href="characters">Characters</a></li>
-  <li class="menu"><a href="planets">Planets</a></li>
-  <li class="menu"><a href="species">Species</a></li>
-  <li class="menu"><a href="starships">Starships</a></li>
-  <li class="menu"><a href="contact">Contact</a></li>
-  <li class="menu"><a href="../pages/about">About</a></li>
-</ul>
+<nav class="navbar is-dark"  aria-label="main navigation">
 
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="characters">
+        Characters
+      </a>
+
+      <a class="navbar-item" href="planets">
+        Planets
+      </a>
+
+      <a class="navbar-item" href="species">
+        Species
+      </a>
+
+      <a class="navbar-item" href="starships">
+        Starships
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../pages/about">
+            About
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 <p style="color: green"><%= notice %></p>
 
-<h1>Species</h1>
+<br>
 
-<div id="species">
-  <% @species.each do |species| %>
-    <%= render species %>
-    <p>
-      <%= link_to "Show this species", species %>
-    </p>
-  <% end %>
-</div>
+<p class="title is-1 is-spaced">Species</p>
 
-<%= link_to "New species", new_species_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name:</th>
+    </tr>
+  </thead>
+  <tbody>
+  <div id="species">
+    <% @species.each do |species| %>
+    <tr>
+      <th><%= link_to species.name, species%></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
