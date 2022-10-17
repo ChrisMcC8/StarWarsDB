@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
         character.name.downcase.include?(search_term)
       }
     else  
-      @characters = Character.all
+      @characters = Character.order(:name)
     end
   end
 

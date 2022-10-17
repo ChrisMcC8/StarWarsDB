@@ -9,7 +9,7 @@ class StarshipsController < ApplicationController
         starship.name.downcase.include?(search_term)
       }
     else  
-      @starships = Starship.all
+      @starships = Starship.order(:name).page params[:page]
     end
   end
 

@@ -41,12 +41,9 @@
 
 <p class="title is-1 is-spaced">Planets</p>
 
-
-<h3>Search for Planets: </h3>
-  <%= form_tag(planets_path, method: :get) do %>
-    <%= text_field_tag( :search, params[:search]) %>
-    <%= submit_tag("Search") %>
-  <% end %>
+<nav class="pagination" aria-label="pagination">
+  <%= paginate @planets %>
+</nav>  
 
 <table class="table">
   <thead>
@@ -57,7 +54,6 @@
     </tr>
   </thead>
   <tbody>
-  <div id="planets">
     <% @planets.each do |planet| %>
     <tr>
       <th><%= link_to planet.name, planet%></th>

@@ -1,6 +1,8 @@
 class Character < ApplicationRecord
     validate :name, :mass, :birth_year, :planet, :species
 
+    belongs_to :planets
+
     def self.search(search)
         if search
             character_type = Character.find_by(name: search)

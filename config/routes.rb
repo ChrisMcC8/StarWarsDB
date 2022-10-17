@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   resources :starships
   resources :planets
   resources :species
-  resources :characters do
-    get '/characters/:character', action: :index, on: :collection
-  end
+  resources :characters 
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -13,8 +12,16 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  resources :characters, only: [:index, :show] do
+    #characters/search/(:format)
+    collection do
+        get "search"
+      end
+    end
+
   Rails.application.routes.draw do
     get "/pages/:page" => "pages#show"
+    get "planets.name" => "planets#show"
   end
 
 

@@ -9,7 +9,7 @@ class PlanetsController < ApplicationController
         planet.name.downcase.include?(search_term)
       }
     else  
-      @planets = Planet.all
+      @planets = Planet.order(:name).page params[:page]
     end
   end
 

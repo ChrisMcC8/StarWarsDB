@@ -2,6 +2,8 @@ class Planet < ApplicationRecord
 
     validate :name, :orbital_period, :diameter, :climate, :terrain, :population
 
+    paginates_per 10
+
     def self.search(search)
         if search
             planet_type = Planet.find_by(name: search)

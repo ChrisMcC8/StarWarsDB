@@ -42,6 +42,10 @@
 <p class="title is-1 is-spaced">Species</p>
 
 
+<nav class="pagination " aria-label="pagination">
+  <%= paginate @species %>
+</nav>
+
 <table class="table">
   <thead>
     <tr>
@@ -49,7 +53,6 @@
     </tr>
   </thead>
   <tbody>
-  <div id="species">
     <% @species.each do |species| %>
     <tr>
       <th><%= link_to species.name, species%></th>
